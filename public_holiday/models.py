@@ -1,3 +1,10 @@
 from django.db import models
 
-# Create your models here.
+
+class PublicHoliday(models.Model):
+
+    day = models.DateField(verbose_name="Public holiday date")
+    description = models.TextField(null=True)
+
+    def __str__(self):
+        return print("Day: {}\n Description: {}", self.day, self.description)
