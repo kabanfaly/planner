@@ -1,5 +1,5 @@
 from django.db import models
-from city import models as city
+from city.models import City
 
 
 class Employee(models.Model):
@@ -20,7 +20,7 @@ class Employee(models.Model):
     id_end_date = models.DateField(verbose_name="ID card due date", null=True)
     citizenship = models.CharField(max_length=45)
     email = models.CharField(max_length=100, null=True)
-    city = models.ForeignKey(city.City)
+    city = models.ForeignKey(City)
 
 
 def __str__(self):

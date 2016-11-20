@@ -1,6 +1,6 @@
 from django.db import models
-from employee import models as employee
-from workplace import models as workplace
+from employee.models import Employee
+from workplace.models import Workplace
 
 
 class Schedule(models.Model):
@@ -13,8 +13,8 @@ class Schedule(models.Model):
     sunday_night_hours = models.TimeField(verbose_name="Sunday: Number of hours worked as night hours", null=True)
     public_holiday_day_hours = models.TimeField(verbose_name="Public holiday: Number of hours worked as day hours", null=True)
     public_holiday_night_hours = models.TimeField(verbose_name="Public holiday: Number of hours worked as night hours", null=True)
-    employee = models.ForeignKey(employee.Employee)
-    workplace = models.ForeignKey(workplace.Workplace)
+    employee = models.ForeignKey(Employee)
+    workplace = models.ForeignKey(Workplace)
 
     def __str__(self):
         print("{}\nWorkplace: {}\nStart time: {}\nEnd time: {}\nBreak: {}\nDay hours: {}\nNight hours: {}"

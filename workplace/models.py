@@ -1,5 +1,5 @@
 from django.db import models
-from city import models as city
+from city.models import City
 
 
 class Workplace(models.Model):
@@ -10,7 +10,7 @@ class Workplace(models.Model):
     city_name = models.CharField(max_length=45, null=True)
     country = models.CharField(max_length=45, null=True)
     phone = models.CharField(max_length=45, null=True)
-    city = models.ForeignKey(city.City)
+    city = models.ForeignKey(City)
 
     def __str__(self):
         return print("{} \n {},  {} {} {}".format(self.name, self.address, self.zip_code, self.city_name, self.country))
