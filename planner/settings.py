@@ -60,7 +60,9 @@ ROOT_URLCONF = 'planner.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'), os.path.join(BASE_DIR, 'employee', 'templates'),
+                 os.path.join(BASE_DIR, 'city', 'templates'), os.path.join(BASE_DIR, 'workplace', 'templates'),
+                 os.path.join(BASE_DIR, 'public_holiday', 'templates'), os.path.join(BASE_DIR, 'schedule', 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

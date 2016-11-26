@@ -18,9 +18,9 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^employee', include('employee.urls')),
-    url(r'^city', include('city.urls')),
-    url(r'^workplace', include('workplace.urls')),
-    url(r'^schedule', include('schedule.urls')),
-    url(r'^public-holiday', include('public_holiday.urls')),
+    url(r'^employee/', include('employee.urls')),
+    url(r'^city/', include('city.urls')),
+    url(r'^workplace/', include('workplace.urls')),
+    url(r'^schedule/', include('schedule.urls')),
+    url(r'^public-holiday/', include('public_holiday.urls')),
 ]
